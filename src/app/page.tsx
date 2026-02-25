@@ -1,6 +1,6 @@
-import { Heatmap } from "@/components/heatmap";
 import Link from "next/link";
 import { DashboardCountryCardsLoader } from "@/components/dashboard-country-cards-loader";
+import { LatestUpdates } from "@/components/latest-updates";
 
 export default function Home() {
   return (
@@ -11,22 +11,27 @@ export default function Home() {
           iGAMING COMPLIANCE COMMAND CENTER
         </p>
         <h1 className="font-display text-3xl font-black tracking-tight text-slate-900 sm:text-5xl">
-          Cross-Country Gambling Regulation Navigator
+          iGaming Compliance Hub
         </h1>
         <p className="mt-4 max-w-3xl text-sm text-slate-700 sm:text-base">
-          Centralized checklist and risk view for UK, Sweden, Italy, and Spain. Designed so legal and compliance teams can find obligations quickly and prove control coverage.
+          One place for legal and compliance teams to track UK, Sweden, Italy, and Spain obligations, prioritize actions, and keep evidence ready.
         </p>
       </section>
 
       <DashboardCountryCardsLoader />
 
       <section className="mt-8 grid gap-6 lg:grid-cols-[2fr_1fr]">
-        <Heatmap />
+        <LatestUpdates />
         <aside className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-          <h2 className="font-display text-xl font-bold text-slate-900">Action Workflow</h2>
+          <h2 className="font-display text-xl font-bold text-slate-900">Quick Start</h2>
           <p className="mt-1 text-sm text-slate-600">
-            Open Action Center for owner assignment, due dates, completion tracking, audit logs, and CSV export.
+            Follow this flow each week to stay compliant and reduce licensing risk.
           </p>
+          <ol className="mt-4 space-y-2 text-sm text-slate-700">
+            <li>1. Open a country rulebook and review latest changes.</li>
+            <li>2. Track remediation in Action Center with owner and due date.</li>
+            <li>3. Export CSV for legal/compliance review meeting.</li>
+          </ol>
 
           <div className="mt-4 rounded-xl bg-slate-900 p-4 text-white">
             <h3 className="text-sm font-semibold tracking-wide">Review cadence</h3>

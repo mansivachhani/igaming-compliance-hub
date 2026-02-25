@@ -12,32 +12,20 @@ export function ChecklistTable({ domain }: ChecklistTableProps) {
         <h3 className="font-display text-lg font-bold text-slate-900">{domain.domain}</h3>
         <StatusBadge status={domain.status} />
       </div>
-
-      <div className="overflow-x-auto">
-        <table className="min-w-full text-sm">
-          <thead>
-            <tr className="border-b border-slate-200 text-left text-slate-500">
-              <th className="pb-2 pr-3">Rule</th>
-              <th className="pb-2 pr-3">Owner</th>
-              <th className="pb-2 pr-3">Priority</th>
-              <th className="pb-2 pr-3">Status</th>
-              <th className="pb-2">Evidence</th>
-            </tr>
-          </thead>
-          <tbody>
-            {domain.checklist.map((item) => (
-              <tr key={item.id} className="border-b border-slate-100 align-top">
-                <td className="py-3 pr-3 text-slate-800">{item.rule}</td>
-                <td className="py-3 pr-3 text-slate-700">{item.owner}</td>
-                <td className="py-3 pr-3 text-slate-700">{item.priority}</td>
-                <td className="py-3 pr-3">
-                  <StatusBadge status={item.status} />
-                </td>
-                <td className="py-3 text-slate-700">{item.evidence}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="space-y-3">
+        {domain.checklist.map((item) => (
+          <article key={item.id} className="rounded-xl border border-slate-200 bg-slate-50 p-3">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <p className="text-sm font-semibold text-slate-900">{item.rule}</p>
+              <StatusBadge status={item.status} />
+            </div>
+            <div className="mt-2 flex flex-wrap gap-2 text-xs">
+              <span className="rounded-full bg-slate-200 px-2 py-1 text-slate-800">Owner: {item.owner}</span>
+              <span className="rounded-full bg-slate-200 px-2 py-1 text-slate-800">Priority: {item.priority}</span>
+            </div>
+            <p className="mt-2 text-xs text-slate-600">Evidence: {item.evidence}</p>
+          </article>
+        ))}
       </div>
     </section>
   );

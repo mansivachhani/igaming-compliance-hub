@@ -76,6 +76,12 @@ export default async function CountryPage({ params }: CountryPageProps) {
               </li>
             ))}
           </ul>
+          <Link
+            href="/action-center"
+            className="mt-4 inline-flex rounded-lg bg-sky-700 px-3 py-2 text-xs font-semibold text-white hover:bg-sky-800"
+          >
+            Open Action Center
+          </Link>
         </article>
       </section>
 

@@ -56,8 +56,8 @@ export const countries: CountryRegulation[] = [
     regulator: "UK Gambling Commission (UKGC)",
     legalBasis: "Gambling Act 2005, LCCP, RTS",
     summary:
-      "Strong focus on customer protection, fair product design, AML effectiveness, and strict bonus/marketing controls.",
-    lastReviewed: "2026-02-14",
+      "Priority areas are customer protection, AML controls, and tighter rules on incentives and promotional design.",
+    lastReviewed: "2026-02-25",
     topRisks: [
       "Incentive/bonus non-compliance under updated LCCP expectations",
       "Weak customer interaction triggers for harm detection",
@@ -132,11 +132,11 @@ export const countries: CountryRegulation[] = [
     recentChanges: [
       {
         date: "2026-01-19",
-        change: "LCCP update took effect on mixed-product promotional incentive restrictions.",
+        change: "LCCP changes took effect on mixed-product promotional incentives and bonus structures.",
       },
       {
-        date: "2025-10-31",
-        change: "Additional customer protection measures entered into force under prior UKGC consultations.",
+        date: "2026-04-30",
+        change: "Further LCCP social responsibility updates are scheduled, including direct-marketing consent controls.",
       },
     ],
     sources: [
@@ -160,8 +160,8 @@ export const countries: CountryRegulation[] = [
     regulator: "Spelinspektionen",
     legalBasis: "Spellag (2018:1138)",
     summary:
-      "Duty of care and safer gambling controls are central; bonus and credit-related restrictions require strict operational enforcement.",
-    lastReviewed: "2026-02-14",
+      "Duty of care, self-exclusion, and bonus/credit restrictions remain core, with stricter credit-ban scope effective in 2026.",
+    lastReviewed: "2026-02-25",
     topRisks: [
       "Duty-of-care controls not consistently escalated",
       "Improper bonus handling beyond first gambling occasion",
@@ -216,6 +216,14 @@ export const countries: CountryRegulation[] = [
             status: "Action Needed",
             evidence: "Bonus rule engine config, campaign QA output",
           },
+          {
+            id: "se-mb-2",
+            rule: "Block any credit-funded gambling flow, including indirect/agent-backed credit arrangements from 1 May 2026.",
+            owner: "Product",
+            priority: "Critical",
+            status: "Action Needed",
+            evidence: "Payments rulebook, blocked-flow test evidence",
+          },
         ],
       },
       {
@@ -235,8 +243,12 @@ export const countries: CountryRegulation[] = [
     ],
     recentChanges: [
       {
+        date: "2026-05-01",
+        change: "Swedish law expands the gambling credit ban to include play financed by representatives/agents.",
+      },
+      {
         date: "2024-07-01",
-        change: "National updates reinforced measures around gambling harms and market supervision.",
+        change: "Sanctions and supervisory measures for licensed gambling operators were reinforced.",
       },
     ],
     sources: [
@@ -252,6 +264,10 @@ export const countries: CountryRegulation[] = [
         label: "Spelinspektionen - AML",
         url: "https://www.spelinspektionen.se/en/rules-and-regulation/money-laundering/",
       },
+      {
+        label: "Government Offices of Sweden - Extended credit ban from 1 May 2026",
+        url: "https://www.government.se/press-releases/2024/09/extended-ban-on-gambling-on-credit/",
+      },
     ],
   },
   {
@@ -260,8 +276,8 @@ export const countries: CountryRegulation[] = [
     regulator: "ADM (Agenzia delle Dogane e dei Monopoli)",
     legalBasis: "Decreto Legislativo 41/2024 and ADM framework",
     summary:
-      "Concession-based model with strict operational and advertising restrictions, plus centralized self-exclusion controls.",
-    lastReviewed: "2026-02-14",
+      "Concession-based model with strict advertising limits, centralized self-exclusion, and ongoing fiscal/legal updates.",
+    lastReviewed: "2026-02-25",
     topRisks: [
       "Misalignment with concession-specific obligations",
       "Marketing content violating broad advertising restrictions",
@@ -327,8 +343,16 @@ export const countries: CountryRegulation[] = [
     ],
     recentChanges: [
       {
+        date: "2025-09-16",
+        change: "New legislative decree updates aspects of the public games framework and related fiscal rules.",
+      },
+      {
+        date: "2025-05-17",
+        change: "Urgent fiscal provisions published with implications for public gaming taxation and compliance operations.",
+      },
+      {
         date: "2024-04-03",
-        change: "Decreto Legislativo 41/2024 published, restructuring remote gaming governance framework.",
+        change: "Decreto Legislativo 41/2024 established the broader remote gaming reorganization framework.",
       },
     ],
     sources: [
@@ -344,6 +368,14 @@ export const countries: CountryRegulation[] = [
         label: "ADM - RUA self exclusion service",
         url: "https://arserviziam.adm.gov.it/static/ar_rua_static/index.html",
       },
+      {
+        label: "Gazzetta Ufficiale - 25G00065",
+        url: "https://www.gazzettaufficiale.it/eli/id/2025/05/17/25G00065/sg",
+      },
+      {
+        label: "Gazzetta Ufficiale - 25G00205",
+        url: "https://www.gazzettaufficiale.it/eli/id/2025/09/16/25G00205/sg",
+      },
     ],
   },
   {
@@ -352,8 +384,8 @@ export const countries: CountryRegulation[] = [
     regulator: "DGOJ",
     legalBasis: "Ley 13/2011 and RD 958/2020",
     summary:
-      "National licensing model with strict commercial communications framework and active illegal gambling enforcement.",
-    lastReviewed: "2026-02-14",
+      "National licensing model with strict commercial communications controls and active illegal gambling enforcement.",
+    lastReviewed: "2026-02-25",
     topRisks: [
       "Marketing communications outside allowed limits",
       "Inadequate controls against unlicensed offering scope",
@@ -419,8 +451,16 @@ export const countries: CountryRegulation[] = [
     ],
     recentChanges: [
       {
+        date: "2026-01-20",
+        change: "DGOJ presented 2026 supervisory priorities including joint deposit limits and risk-detection alerts.",
+      },
+      {
+        date: "2025-05-06",
+        change: "DGOJ reported firm sanctions and blocking actions against unlicensed operators.",
+      },
+      {
         date: "2020-11-04",
-        change: "RD 958/2020 established enhanced commercial communications controls for gambling activities.",
+        change: "RD 958/2020 remains the baseline framework for gambling commercial communications.",
       },
     ],
     sources: [
@@ -435,6 +475,10 @@ export const countries: CountryRegulation[] = [
       {
         label: "DGOJ - Illegal gambling portal",
         url: "https://www.ordenacionjuego.es/participantes-juego/juego-ilegal",
+      },
+      {
+        label: "DGOJ - 2026 regulatory priorities",
+        url: "https://www.ordenacionjuego.es/novedades",
       },
     ],
   },

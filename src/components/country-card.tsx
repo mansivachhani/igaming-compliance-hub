@@ -18,6 +18,7 @@ type CountryCardProps = {
 export function CountryCard({ country, progress }: CountryCardProps) {
   const overall = overallStatus(country);
   const counts = statusCount(country);
+  const latest = country.recentChanges[0];
 
   return (
     <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
@@ -30,6 +31,9 @@ export function CountryCard({ country, progress }: CountryCardProps) {
       </header>
 
       <p className="mb-4 text-sm text-slate-700">{country.summary}</p>
+      <p className="mb-4 text-xs text-slate-600">
+        Latest update: <span className="font-semibold text-slate-800">{latest.date}</span> | {latest.change}
+      </p>
 
       <dl className="mb-5 grid grid-cols-3 gap-2 text-center text-xs">
         <div className="rounded-lg bg-rose-50 p-2">
