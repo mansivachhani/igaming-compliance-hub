@@ -22,6 +22,13 @@ export type CountryProgress = {
   overdue: number;
 };
 
+export type PriorityItem = {
+  row: ActionRow;
+  state: ItemState;
+  score: number;
+  reasons: string[];
+};
+
 export const ACTION_CENTER_STORAGE_KEY = "igaming-action-center-v1";
 
 export const ownerOptions: OwnerRole[] = ["Legal", "Compliance Ops", "Product", "Engineering", "CRM"];
@@ -90,4 +97,56 @@ export function getCountryProgress(countrySlug: string, state: PersistedState): 
     },
     { total: 0, completed: 0, overdue: 0 },
   );
+}
+
+export function getTodayPriorities(state: PersistedState, limit = 6): PriorityItem[] {
+  const today = new Date().toISOString().slice(0, 10);
+
+  const items = flattenRows()
+    .map((row) => {
+      const rowState = withDefaultState(state, row);
+
+      if (rowState.completed) {
+        return null;
+      }
+
+      let score = 0;
+      const reasons: string[] = [];
+
+      if (rowState.dueDate && rowState.dueDate < today) {
+        score += 100;
+        reasons.push("Overdue");
+      }
+
+      if (row.status === "Action Needed") {
+        score += 60;
+        reasons.push("Action Needed");
+      } else if (row.status === "At Risk") {
+        score += 30;
+        reasons.push("At Risk");
+      }
+
+      if (row.priority === "Critical") {
+        score += 30;
+        reasons.push("Critical");
+      } else if (row.priority === "High") {
+        score += 15;
+      }
+
+      if (!rowState.dueDate) {
+        score += 8;
+        reasons.push("No due date");
+      }
+
+      return {
+        row,
+        state: rowState,
+        score,
+        reasons,
+      } satisfies PriorityItem;
+    })
+    .filter((item): item is PriorityItem => item !== null)
+    .sort((a, b) => b.score - a.score);
+
+  return items.slice(0, limit);
 }

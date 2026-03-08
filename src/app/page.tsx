@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { DashboardCountryCardsLoader } from "@/components/dashboard-country-cards-loader";
 import { LatestUpdates } from "@/components/latest-updates";
+import { TodayPrioritiesLoader } from "@/components/today-priorities-loader";
 
 export default function Home() {
   return (
@@ -21,7 +22,10 @@ export default function Home() {
       <DashboardCountryCardsLoader />
 
       <section className="mt-8 grid gap-6 lg:grid-cols-[2fr_1fr]">
-        <LatestUpdates />
+        <div className="space-y-6">
+          <TodayPrioritiesLoader />
+          <LatestUpdates />
+        </div>
         <aside className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
           <h2 className="font-display text-xl font-bold text-slate-900">Quick Start</h2>
           <p className="mt-1 text-sm text-slate-600">
