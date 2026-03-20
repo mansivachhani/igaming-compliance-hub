@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# iGaming Compliance Hub
 
-## Getting Started
+A centralized compliance operations app for online gambling teams to track regulations, assess risk, and run remediation across multiple regulated markets.
 
-First, run the development server:
+## Demo
+
+- Live demo: https://igaming-compliance-hub.vercel.app
+
+## What This App Does
+
+- Consolidates country-specific regulation tracking for UK, Sweden, Italy, and Spain.
+- Surfaces urgent compliance actions with a prioritized "Today's Priorities" queue.
+- Provides country rulebooks with latest regulatory milestones and control checklists.
+- Tracks remediation in Action Center with owner assignment, due dates, completion state, and audit logs.
+- Exports filtered action lists to CSV for legal/compliance review workflows.
+
+## Core Pages
+
+- Dashboard (`/`): market overview, latest updates, and priority triage.
+- Country Rulebook (`/country/[slug]`): per-country obligations, risk signals, and source links.
+- Action Center (`/action-center`): operational task management for compliance remediation.
+
+## Tech Stack
+
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+- Browser localStorage for action state persistence
+
+## Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build and Lint
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+## Data and Regulatory Notes
 
-To learn more about Next.js, take a look at the following resources:
+- Regulatory content is maintained in `src/lib/regulation-data.ts`.
+- Prioritization and task persistence logic are in `src/lib/action-center-state.ts`.
+- This app is an operations aid, not legal advice. Final interpretation should be validated by local legal counsel.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Repository
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- GitHub: https://github.com/mansivachhani/igaming-compliance-hub
