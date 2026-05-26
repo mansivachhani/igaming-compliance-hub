@@ -1,31 +1,51 @@
 # iGaming Compliance Hub
 
-A centralized compliance operations app for online gambling teams to track regulations, assess risk, and run remediation across multiple regulated markets.
+A practical compliance operations app for online gambling teams to track regulations, prioritize remediation, and keep audit-ready evidence across regulated markets.
 
-## Demo
+## Live Demo
 
-- Live demo: https://igaming-compliance-hub.vercel.app
+- [iGaming Compliance Hub](https://igaming-compliance-hub.vercel.app)
 
-## What This App Does
+## Purpose
 
-- Consolidates country-specific regulation tracking for UK, Sweden, Italy, and Spain.
-- Surfaces urgent compliance actions with a prioritized "Today's Priorities" queue.
-- Provides country rulebooks with latest regulatory milestones and control checklists.
-- Tracks remediation in Action Center with owner assignment, due dates, completion state, and audit logs.
-- Exports filtered action lists to CSV for legal/compliance review workflows.
+This project helps legal, compliance, and product teams answer three daily questions quickly:
 
-## Core Pages
+1. What changed recently in each market?
+2. What must be fixed first to reduce licensing risk?
+3. Who owns each action and when is it due?
 
-- Dashboard (`/`): market overview, latest updates, and priority triage.
-- Country Rulebook (`/country/[slug]`): per-country obligations, risk signals, and source links.
-- Action Center (`/action-center`): operational task management for compliance remediation.
+## Current Market Coverage
+
+- United Kingdom (UKGC)
+- Sweden (Spelinspektionen)
+- Italy (ADM)
+- Spain (DGOJ)
+
+## Key Features
+
+- Country rulebooks with obligations, risk signals, and official source links
+- Latest regulatory milestones per market on the dashboard
+- "Today's Priorities" triage queue for urgent controls
+- Action Center with:
+  - owner assignment
+  - due dates
+  - complete/reopen workflow
+  - audit trail timestamps
+  - CSV export of filtered actions
+- Per-country progress and overdue visibility on cards
+
+## Main Routes
+
+- `/` Dashboard: country overview, latest updates, priority triage
+- `/country/[slug]` Rulebook: detailed country controls and sources
+- `/action-center` Action workflow: remediation management and export
 
 ## Tech Stack
 
 - Next.js (App Router)
 - TypeScript
 - Tailwind CSS
-- Browser localStorage for action state persistence
+- localStorage-backed task state
 
 ## Local Development
 
@@ -34,21 +54,25 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000
+Then open [http://localhost:3000](http://localhost:3000).
 
-## Build and Lint
+## Quality Checks
 
 ```bash
 npm run lint
 npm run build
 ```
 
-## Data and Regulatory Notes
+## Data Structure
 
-- Regulatory content is maintained in `src/lib/regulation-data.ts`.
-- Prioritization and task persistence logic are in `src/lib/action-center-state.ts`.
-- This app is an operations aid, not legal advice. Final interpretation should be validated by local legal counsel.
+- Regulation content: `src/lib/regulation-data.ts`
+- Action state + prioritization: `src/lib/action-center-state.ts`
+
+## Notes
+
+- This tool supports compliance operations and documentation.
+- It is not legal advice; final interpretation should be validated by local legal counsel.
 
 ## Repository
 
-- GitHub: https://github.com/mansivachhani/igaming-compliance-hub
+- [GitHub](https://github.com/mansivachhani/igaming-compliance-hub)
